@@ -8,3 +8,4 @@ A system that generates an apt, emotionally pertinent, unique musical score for 
 - ibm_watson - pip install ibm_watson
 - vader_sentiment - pip install vader_sentiment
 - nltk - pip install nltk
+- text2emotion - pip install text2emotion
