@@ -1,7 +1,6 @@
 #Audio analysis/segmentation
 librosa==0.7.2
 numba==0.48
-ffmpeg-python==0.2.0
 
 #Audio Transcription
 ibm-watson==5.1.0

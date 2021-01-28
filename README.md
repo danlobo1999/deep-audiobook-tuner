@@ -4,4 +4,6 @@ A system that generates an apt, emotionally pertinent, unique musical score for 
 
 ## Libraries to install
 
-run `pip install -r requirements.txt` to install all the required libraries
+Run `pip install -r requirements.txt` to install all the required libraries
+
+Install ffmpeg in your conda environment `conda install -c conda-forge ffmpeg`
