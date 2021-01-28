@@ -4,8 +4,4 @@ A system that generates an apt, emotionally pertinent, unique musical score for 
 
 ## Libraries to install
 
-- dotenv - pip install python-dotenv
-- ibm_watson - pip install ibm_watson
-- vader_sentiment - pip install vader_sentiment
-- nltk - pip install nltk
-- text2emotion - pip install text2emotion
+run `pip install -r requirements.txt` to install all the required libraries

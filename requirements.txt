@@ -1,0 +1,14 @@
+#Audio analysis/segmentation
+librosa==0.7.2
+numba==0.48
+ffmpeg-python==0.2.0
+
+#Audio Transcription
+ibm-watson==5.1.0
+
+#Emotion detection 
+text2emotion==0.0.5
+
+#VADER Sentiment Analysis
+#vaderSentiment==3.3.2
+#nltk==3.5
