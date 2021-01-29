@@ -1,13 +1,16 @@
-#Audio analysis/segmentation
+# Environment variables
+python-dotenv==0.15.0
+
+# Audio analysis/segmentation
 librosa==0.7.2
 numba==0.48
 
-#Audio Transcription
+# Audio Transcription
 ibm-watson==5.1.0
 
-#Emotion detection 
+# Emotion detection 
 text2emotion==0.0.5
 
-#VADER Sentiment Analysis
+# VADER Sentiment Analysis
 #vaderSentiment==3.3.2
 #nltk==3.5
