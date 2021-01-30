@@ -4,6 +4,7 @@ python-dotenv==0.15.0
 # Audio analysis/segmentation
 librosa==0.7.2
 numba==0.48
+pydub==0.24.1
 
 # Audio Transcription
 ibm-watson==5.1.0
