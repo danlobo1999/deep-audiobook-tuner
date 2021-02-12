@@ -5,5 +5,6 @@ A system that generates an apt, emotionally pertinent, unique musical score for 
 ## Libraries to install
 
 Run `pip install -r requirements.txt` to install all the required libraries
+[Install the requirements for Tensorflow before you run this command] (https://www.tensorflow.org/install)
 
 Install ffmpeg in your conda environment `conda install -c conda-forge ffmpeg`

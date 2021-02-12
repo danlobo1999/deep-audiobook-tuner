@@ -1,0 +1,3 @@
+# ignores all files in the directory but keeps the directory
+*
+!.gitignore
