@@ -1,8 +1,11 @@
 # Environment variables
 python-dotenv==0.15.0
 
+notebook
+pandas==1.2.2
+
 # Audio analysis/segmentation
-librosa==0.7.2
+librosa==0.8.0
 numba==0.48
 pydub==0.24.1
 tensorflow==2.4.1
