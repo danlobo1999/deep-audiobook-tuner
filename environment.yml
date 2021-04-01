@@ -1,0 +1,29 @@
+# To Run: conda env create -f environment.yml
+name: deepaudiobooktuner
+channels:
+  - fastai
+  - pytorch
+  - defaults
+dependencies:
+  - numba==0.48
+  - pandas>=1.2.2
+  - keras==2.4.3
+  - seaborn==0.11.1
+  - scikit-learn==0.24.1
+  - pytorch
+  - fastai==1.0.61
+  - jupyter
+  - ipyparallel
+  - pip
+  - python>=3.6
+  - pip:
+      - music21
+      - pebble
+      - librosa==0.8.0
+      - pydub==0.24.1
+      - keras-tuner==1.0.2
+      - python-dotenv==0.15.0
+      - ktrain==0.26.2
+      - ibm-watson==5.1.0
+      # - text2emotion==0.0.5
+      # - tensorflow==2.4.1

@@ -1,6 +1,7 @@
 # Environment variables
 python-dotenv==0.15.0
 
+# Dependencies
 notebook
 pandas==1.2.2
 
@@ -17,9 +18,15 @@ keras-tuner==1.0.2
 # Audio Transcription
 ibm-watson==5.1.0
 
-# Emotion detection 
-text2emotion==0.0.5
+# Text analysis 
+ktrain==0.26.2
+# text2emotion==0.0.5
+# vaderSentiment==3.3.2
+# nltk==3.5
 
-# VADER Sentiment Analysis
-#vaderSentiment==3.3.2
-#nltk==3.5
+# Music generation
+ipyparallel
+pytorch
+fastai==1.0.61
+music21
+pebble

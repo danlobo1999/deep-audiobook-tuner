@@ -1,0 +1,2 @@
+deepspeech==0.6.0
+wave==0.0.2
