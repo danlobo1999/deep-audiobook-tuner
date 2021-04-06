@@ -30,3 +30,4 @@ pytorch
 fastai==1.0.61
 music21
 pebble
+musicautobot==0.0.1

@@ -25,5 +25,6 @@ dependencies:
       - python-dotenv==0.15.0
       - ktrain==0.26.2
       - ibm-watson==5.1.0
+      - musicautobot==0.0.1
       # - text2emotion==0.0.5
       # - tensorflow==2.4.1
