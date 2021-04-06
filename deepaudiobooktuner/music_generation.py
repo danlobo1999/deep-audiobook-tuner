@@ -413,7 +413,6 @@ def fetchMidi(emotion, music_folder):
     folder = f"{music_folder}/{emotion}"
     songs_list = glob.glob(f"{folder}/*.mid")
     song = songs_list[random.randrange(len(songs_list))]
-    print(song)
 
     return song
 
