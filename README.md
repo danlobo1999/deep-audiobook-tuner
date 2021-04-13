@@ -16,10 +16,19 @@ Now the system will have obtained 2 values (sentiments) predicted by both, the T
 
 ## Libraries to install
 
-Run `pip install -r requirements.txt` to install all the required libraries
-[Install the requirements for Tensorflow before you run this command](https://www.tensorflow.org/install)
+Install the requirements for [Tensorflow](https://www.tensorflow.org/install) before you run the following commands.
 
-Install ffmpeg in your conda environment `conda install -c conda-forge ffmpeg`
+Run `pip install -r requirements.txt` to install all the required libraries (python version = 3.7) 
+
+Or   
+
+Create a conda environment: `conda env create -f environment.yml`  
+(This method requires tensorflow 2.4 to be installed seperately in the environment.  
+Run `conda activate deepaudiobooktuner` and `pip install tensorflow==2.4.1`)
+
+
+ffmpeg is required by the system to covert mp3 files to wav files. It can be installed from [here.](https://www.ffmpeg.org/download.html)
+
 
 ## **How it works?**
 This application uses Flask, HTML, CSS, and JavaScript. 
@@ -49,5 +58,4 @@ If not, they can go back, upload the audio file and have it be processed again a
 *   [Jenny Dcruz](https://github.com/jendcruz22)
 *   [Smita Deulkar](https://github.com/smita3199)
 *   [Leander Fernandes](https://github.com/fernandeslder)
-
 
