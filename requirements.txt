@@ -12,7 +12,7 @@ pydub==0.24.1
 tensorflow==2.4.1
 keras==2.4.3
 seaborn==0.11.1
-scikit-learn==0.24.1
+scikit-learn==0.23.2
 keras-tuner==1.0.2
 
 # Audio Transcription
