@@ -1,14 +1,12 @@
 import ktrain
 from ktrain import text
 import numpy as np
-import pandas as pd
-import tensorflow as tf
 import time
 
-from deepaudiobooktuner.ibm_transcription import transcribeAudio
+from deepaudiobooktuner.sentiment_analysis.ibm_transcription import transcribeAudio
 
 
-def loadModel(modelPath):
+def loadTextAssets(modelPath):
     predictor = ktrain.load_predictor(modelPath)
     classes = predictor.get_classes()
     return predictor, classes
@@ -32,9 +30,9 @@ def analyzeText(file_name, stt, predictor):
     split_index = 0
 
     for i in range(2):
-        split_text.append(text[split_index : split_index + split_length])
+        split_text.append(words[split_index : split_index + split_length])
         split_index = split_index + split_length
-    split_text.append(text[split_index::])
+    split_text.append(words[split_index::])
 
     split_sentences = []
     for i in range(len(split_text)):
@@ -45,8 +43,13 @@ def analyzeText(file_name, stt, predictor):
     for i in range(len(split_sentences)):
         prediction = predictor.predict(split_sentences[i], return_proba=True)
         final_preds.append(prediction)
+        # print(f"text-clip-{i+1}-prediction {prediction}")
 
-    text_emotions = np.sum(final_preds, axis=0) / 3
+    finpredval = np.sum(final_preds, axis=0) / 3
+
+    text_emotions = np.array(
+        [finpredval[2], finpredval[0], finpredval[3], finpredval[1]]
+    )
 
     print(
         f"--------Text analysis complete. Time taken: {round(time.time()-current_time, 1)} s"

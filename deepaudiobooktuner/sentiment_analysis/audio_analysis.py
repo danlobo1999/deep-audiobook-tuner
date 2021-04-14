@@ -6,6 +6,21 @@ import pickle
 import time
 
 
+def loadAudioAssets(model_path, pickles_path):
+    # Load the model
+    model = tf.keras.models.load_model(model_path)
+
+    # Load the scaler
+    pickle_in = open(f"{pickles_path}/scaler.pickle", "rb")
+    scaler = pickle.load(pickle_in)
+
+    # Laod the audio classes
+    pickle_in = open(f"{pickles_path}/labels.pickle", "rb")
+    audio_classes = pickle.load(pickle_in)
+
+    return model, scaler, audio_classes
+
+
 def featureExtraction(y, sr):
     rmse = np.mean(librosa.feature.rms(y=y))
     spec_cent = np.mean(librosa.feature.spectral_centroid(y=y, sr=sr))
@@ -55,21 +70,6 @@ def featureExtraction(y, sr):
         mfcc[19],
     ]
     return data_features
-
-
-def loadAudioAssets(model_path, pickles_path):
-    # Load the model
-    model = tf.keras.models.load_model(model_path)
-
-    # Load the scaler
-    pickle_in = open(f"{pickles_path}/scaler.pickle", "rb")
-    scaler = pickle.load(pickle_in)
-
-    # Laod the audio classes
-    pickle_in = open(f"{pickles_path}/labels.pickle", "rb")
-    audio_classes = pickle.load(pickle_in)
-
-    return model, scaler, audio_classes
 
 
 def analyzeAudio(file_name, model, scaler):

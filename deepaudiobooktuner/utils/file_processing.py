@@ -1,12 +1,7 @@
-import subprocess
-import os
 import librosa
 import soundfile as sf
+import subprocess
 import time
-
-
-def path(relative_path):
-    return os.path.abspath(relative_path)
 
 
 def convertToWav(file_name, file_path, save_path):
