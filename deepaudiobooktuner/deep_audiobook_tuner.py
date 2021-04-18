@@ -1,10 +1,16 @@
 from glob import glob
+import os
 import shutil
 import time
 
 from deepaudiobooktuner.utils.paths import createDir
 from deepaudiobooktuner.utils.load_assets import loadAssets
-from deepaudiobooktuner.utils.file_processing import convertToWav, segmentAudioFile
+from deepaudiobooktuner.utils.file_processing import (
+    convertToWav,
+    segmentAudioFile,
+    convertToMp3,
+    saveMusicClips,
+)
 from deepaudiobooktuner.sentiment_analysis.text_analysis import analyzeText
 from deepaudiobooktuner.sentiment_analysis.audio_analysis import analyzeAudio
 from deepaudiobooktuner.music_generation.music_generation import generateMusicClips
@@ -102,10 +108,9 @@ class deepAudiobookTuner:
             songs=self.songs,
         )
 
-        # Saving the music clips
-        for song_emotion in self.songs:
-            out_file_name = f'{self.paths["music_clips_save_path"]}/{song_emotion}.midi'
-            self.songs[song_emotion].stream.write("midi", out_file_name)
+        saveMusicClips(
+            music_emotions=music_emotions, songs=self.songs, paths=self.paths
+        )
 
         print(
             f"----\nMusic Generation Complete. Time taken: {round(time.time() - music_generation_time, 1)} s"
