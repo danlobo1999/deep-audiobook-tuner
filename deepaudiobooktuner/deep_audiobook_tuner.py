@@ -22,8 +22,8 @@ from deepaudiobooktuner.music_generation.music_generation import (
 
 
 class deepAudiobookTuner:
-    def __init__(self, audiobook_path):
-        self.audiobook_path = audiobook_path
+    def __init__(self):
+        self.audiobook_path = None
         self.songs = {}  # Dictionary to store songs
         self.transcriptions = (
             []
@@ -32,6 +32,13 @@ class deepAudiobookTuner:
         self.music_dict = {}  # Dictionary to save mp3 paths
         self.final_track = None
         self.final_audiobook = None
+        self.file_name = None
+        self.paths = None
+        self.assets = None
+        self.wav_file_path = None
+
+    def initialize(self, audiobook_path):
+        self.audiobook_path = audiobook_path
 
         # Creating a temperory directory to store the segmented audiobook clips and generated music clips
         print("\nCreating temporary directory.")
@@ -112,7 +119,7 @@ class deepAudiobookTuner:
 
         self.songs = generateMusicClips(
             music_emotions=music_emotions,
-            paths=self.paths,
+            music_samples_path=self.paths["music_samples"],
             music_model=self.assets["music_model"],
             music_data=self.assets["music_data"],
             songs=self.songs,
