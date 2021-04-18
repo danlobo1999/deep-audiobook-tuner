@@ -6,8 +6,8 @@ import time
 from deepaudiobooktuner.sentiment_analysis.ibm_transcription import transcribeAudio
 
 
-def loadTextAssets(modelPath):
-    predictor = ktrain.load_predictor(modelPath)
+def loadTextAssets(model_path):
+    predictor = ktrain.load_predictor(model_path)
     classes = predictor.get_classes()
     return predictor, classes
 

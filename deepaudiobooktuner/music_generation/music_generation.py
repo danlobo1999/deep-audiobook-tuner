@@ -15,9 +15,9 @@ from deepaudiobooktuner.music_generation.music_transformer.model import *
 from deepaudiobooktuner.music_generation.music_transformer.learner import *
 
 
-def loadMusicAssets(paths):
-    music_data = load_data(paths["music_data"], "musicitem_data_save.pkl")
-    music_model = music_model_learner(music_data, pretrained_path=paths["music_model"])
+def loadMusicAssets(music_data_path, music_model_path):
+    music_data = load_data(music_data_path, "musicitem_data_save.pkl")
+    music_model = music_model_learner(music_data, pretrained_path=music_model_path)
     return music_data, music_model
 
 
@@ -29,13 +29,15 @@ def fetchMidi(emotion, music_folder):
     return song
 
 
-def generateMusicClips(paths, music_model, music_data, songs, music_emotions):
+def generateMusicClips(
+    music_samples_path, music_model, music_data, songs, music_emotions
+):
     # Generating music for each emotion
     for music_emotion in music_emotions:
         current_time = time.time()
 
         # Fetch a random song for the given emotion
-        midi_file = path(fetchMidi(music_emotion, f"{paths['music_samples']}"))
+        midi_file = path(fetchMidi(music_emotion, music_samples_path))
 
         # Define the number of beats to be used from the seed song
         cuttoff_beat = 10

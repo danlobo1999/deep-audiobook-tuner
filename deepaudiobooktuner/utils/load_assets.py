@@ -18,14 +18,16 @@ def loadAssets(paths):
 
     # Loading the text analyzer model and classes
     current_time = time.time()
-    text_predictor, text_classes = loadTextAssets(modelPath=paths["text_model"])
+    text_predictor, text_classes = loadTextAssets(model_path=paths["text_model"])
     print(
         f"----Loaded text model assets. Time taken: {round(time.time()-current_time, 1)} s"
     )
 
     # Loading the music generation model and music_data
     current_time = time.time()
-    music_data, music_model = loadMusicAssets(paths=paths)
+    music_data, music_model = loadMusicAssets(
+        music_data_path=paths["music_data"], music_model_path=paths["music_model"]
+    )
     print(
         f"----Loaded music model assets. Time taken: {round(time.time()-current_time, 1)} s"
     )
