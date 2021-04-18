@@ -26,22 +26,27 @@ def convertToMp3(file_name, file_path, save_path):
     # Defining a Fluidsynth instance
     fs = FluidSynth(fs_font_path)
 
+    wav_save_name = f"{save_path}/{file_name}.wav"
+    mp3_save_name = f"{save_path}/{file_name}.mp3"
+
     # Converting and saving the midi file as a wav file
-    fs.midi_to_audio(file_path, f"{save_path}/{file_name}.wav")
+    fs.midi_to_audio(file_path, wav_save_name)
 
     # Loading the wav file, converting and saving it as a mp3 file
-    AudioSegment.from_wav(f"{save_path}/{file_name}.wav").export(
-        f"{save_path}/{file_name}.mp3", format="mp3"
-    )
+    AudioSegment.from_wav(wav_save_name).export(mp3_save_name, format="mp3")
 
     # Removing the wav file
     try:
-        os.remove(f"{save_path}/{file_name}.wav")
+        os.remove(wav_save_name)
     except:
         pass
 
+    return mp3_save_name
+
 
 def saveMusicClips(music_emotions, songs, paths):
+    music_dict = {}
+
     # Saving the music clips
     for song_emotion in music_emotions:
 
@@ -50,7 +55,7 @@ def saveMusicClips(music_emotions, songs, paths):
         songs[song_emotion].stream.write("midi", out_file_name)
 
         # Converting the saved midi file to a mp3 file
-        convertToMp3(
+        mp3_save_name = convertToMp3(
             file_name=song_emotion,
             file_path=out_file_name,
             save_path=paths["music_clips_save_path"],
@@ -61,6 +66,10 @@ def saveMusicClips(music_emotions, songs, paths):
             os.remove(out_file_name)
         except:
             pass
+
+        music_dict[song_emotion.lower()] = mp3_save_name
+
+    return music_dict
 
 
 def segmentAudioFile(file_name, file_path, save_path):

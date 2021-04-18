@@ -1,4 +1,5 @@
 from glob import glob
+import numpy as np
 import os
 import shutil
 import time
@@ -13,7 +14,11 @@ from deepaudiobooktuner.utils.file_processing import (
 )
 from deepaudiobooktuner.sentiment_analysis.text_analysis import analyzeText
 from deepaudiobooktuner.sentiment_analysis.audio_analysis import analyzeAudio
-from deepaudiobooktuner.music_generation.music_generation import generateMusicClips
+from deepaudiobooktuner.music_generation.music_generation import (
+    generateMusicClips,
+    createSountrack,
+    overlaySoundtrack,
+)
 
 
 class deepAudiobookTuner:
@@ -24,6 +29,9 @@ class deepAudiobookTuner:
             []
         )  # List to store transcriptions of all the segmented clips
         self.emotions = []  # List to store emotions of all the segmented clips
+        self.music_dict = {}  # Dictionary to save mp3 paths
+        self.final_track = None
+        self.final_audiobook = None
 
         # Creating a temperory directory to store the segmented audiobook clips and generated music clips
         print("\nCreating temporary directory.")
@@ -91,11 +99,13 @@ class deepAudiobookTuner:
                 f"----Clip {i+1} processed. Time taken: {round(time.time() - clip_time, 1)} s"
             )
 
+        self.emotions = list(np.array(self.emotions).flatten())
+
         print(
             f"----\nSentiment Analysis Complete. Time taken: {round(time.time() - sentiment_analysis_time, 1)} s"
         )
 
-    def generateMusic(self, music_emotions=["Angry", "Happy", "Neutral", "Sad"]):
+    def generateMusic(self, music_emotions=["angry", "happy", "neutral", "sad"]):
         # Generating music clips
         print("\n\nGenerating music")
         music_generation_time = time.time()
@@ -108,12 +118,26 @@ class deepAudiobookTuner:
             songs=self.songs,
         )
 
-        saveMusicClips(
+        self.music_dict = saveMusicClips(
             music_emotions=music_emotions, songs=self.songs, paths=self.paths
         )
 
         print(
             f"----\nMusic Generation Complete. Time taken: {round(time.time() - music_generation_time, 1)} s"
+        )
+
+    # Generating the final soundtrack
+    def generateSoundtrack(self):
+        self.final_track = createSountrack(
+            music_dict=self.music_dict, emotion_list=self.emotions
+        )
+        self.final_audiobook = overlaySoundtrack(
+            audiobook_path=self.audiobook_path, final_track=self.final_track
+        )
+
+        self.final_audiobook.export(
+            f"{self.paths['final_audiobook_save_path']}/{self.file_name}-dat.mp3",
+            format="mp3",
         )
 
     def deleteTempDirectory(self):

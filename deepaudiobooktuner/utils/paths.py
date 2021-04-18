@@ -27,12 +27,16 @@ def createDir(file_path):
         "music_clips_save_path": path(
             f"../assets/temp/{file_name}-{creation_time}/music_clips"
         ),
+        "final_audiobook_save_path": path(
+            f"../assets/temp/{file_name}-{creation_time}/final_audiobook"
+        ),
     }
 
     # Creating directories in temp to store the converted wav file and the clips
     os.mkdir(paths["wav_save_path"])
     os.mkdir(paths["clips_save_path"])
     os.mkdir(paths["music_clips_save_path"])
+    os.mkdir(paths["final_audiobook_save_path"])
 
     print("----Temporary directory created.")
 
