@@ -17,16 +17,14 @@ keras-tuner==1.0.2
 
 # Audio Transcription
 ibm-watson==5.1.0
+# deepspeech==0.6.0
+# wave==0.0.2
 
 # Text analysis 
 ktrain==0.26.2
 # text2emotion==0.0.5
 # vaderSentiment==3.3.2
 # nltk==3.5
-
-# VADER Sentiment Analysis
-#vaderSentiment==3.3.2
-#nltk==3.5
 
 # Music generation
 ipyparallel
