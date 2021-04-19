@@ -50,6 +50,8 @@ def analyzeText(file_name, stt, predictor):
     # text_emotions = np.array(
     #     [finpredval[2], finpredval[0], finpredval[3], finpredval[1]]
     # )
+    finpredval[0] = finpredval[0]*0.8
+    finpredval[2] = finpredval[2]*1.2
     text_emotions = finpredval
 
     print(
