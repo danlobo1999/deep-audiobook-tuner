@@ -23,19 +23,27 @@ from deepaudiobooktuner.music_generation.music_generation import (
 
 class deepAudiobookTuner:
     def __init__(self):
-        self.audiobook_path = None
-        self.songs = {}  # Dictionary to store songs
+        self.audiobook_path = None  # Path to the uploaded audiobook
+        self.file_name = None  # Name of the audiobook
+        self.paths = None  # Dictionary of all the required paths
+        self.assets = None  # Dictionary of all assets required for the session
+        self.wav_file_path = None  # Path of the converted audiobook in wav format
         self.transcriptions = (
             []
         )  # List to store transcriptions of all the segmented clips
-        self.emotions = []  # List to store emotions of all the segmented clips
-        self.music_dict = {}  # Dictionary to save mp3 paths
-        self.final_track = None
-        self.final_audiobook = None
-        self.file_name = None
-        self.paths = None
-        self.assets = None
-        self.wav_file_path = None
+        self.emotions = (
+            []
+        )  # List to store the final emotions of all the segmented clips
+        self.audio_emotions_list = (
+            []
+        )  # List to store the audio emotions of all the segmented clips
+        self.text_emotions_list = (
+            []
+        )  # List to store the text emotions of all the segmented clips
+        self.songs = {}  # Dictionary to store songs
+        self.music_dict = {}  # Dictionary to save generated music clips mp3 paths
+        self.final_track = None  # Final soundtrack after mastering
+        self.final_audiobook = None  # Final audiobook after mixing with the soundtrack
 
     def initialize(self, audiobook_path):
         self.audiobook_path = audiobook_path
@@ -79,6 +87,7 @@ class deepAudiobookTuner:
                 stt=self.assets["stt"],
                 predictor=self.assets["text_predictor"],
             )
+            self.text_emotions_list.append(text_emotions)
 
             # Performing text sentiment analysis
             print("----Audio sentiment analysis")
@@ -87,6 +96,7 @@ class deepAudiobookTuner:
                 model=self.assets["audio_model"],
                 scaler=self.assets["audio_scaler"],
             )
+            self.audio_emotions_list.append(audio_emotions)
 
             # Taking the average of text and audio emotions
             print("----Predicting final emotion")
@@ -112,7 +122,7 @@ class deepAudiobookTuner:
             f"----\nSentiment Analysis Complete. Time taken: {round(time.time() - sentiment_analysis_time, 1)} s"
         )
 
-    def generateMusic(self, music_emotions=["angry", "happy", "neutral", "sad"]):
+    def generateMusic(self, music_emotions=["Angry", "Happy", "Neutral", "Sad"]):
         # Generating music clips
         print("\n\nGenerating music")
         music_generation_time = time.time()
