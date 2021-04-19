@@ -47,9 +47,10 @@ def analyzeText(file_name, stt, predictor):
 
     finpredval = np.sum(final_preds, axis=0) / 3
 
-    text_emotions = np.array(
-        [finpredval[2], finpredval[0], finpredval[3], finpredval[1]]
-    )
+    # text_emotions = np.array(
+    #     [finpredval[2], finpredval[0], finpredval[3], finpredval[1]]
+    # )
+    text_emotions = finpredval
 
     print(
         f"--------Text analysis complete. Time taken: {round(time.time()-current_time, 1)} s"
