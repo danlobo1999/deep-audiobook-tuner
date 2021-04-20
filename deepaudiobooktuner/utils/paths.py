@@ -16,7 +16,7 @@ def createDir(file_path):
             "../assets/audio_sentiment_data_v2/models/hyperband_tuned_model_19_april_[0.3624165654182434, 0.8720930218696594]/"
         ),
         "pickles": path("../assets/audio_sentiment_data_v2/pickles"),
-        "text_model": path("../assets/text_sentiment_data/models/my_bert_model/"),
+        "text_model": path("../assets/text_sentiment_data/models/neubias_bert_model/"),
         "music_model": path(
             "../assets/music_generation/models/MusicTransformerKeyC.pth"
         ),
