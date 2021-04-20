@@ -11,6 +11,7 @@ from deepaudiobooktuner.utils.file_processing import (
     segmentAudioFile,
     convertToMp3,
     saveMusicClips,
+    alphanum_key,
 )
 from deepaudiobooktuner.sentiment_analysis.text_analysis import analyzeText
 from deepaudiobooktuner.sentiment_analysis.audio_analysis import analyzeAudio
@@ -76,7 +77,10 @@ class deepAudiobookTuner:
         print("\n\nPerforming sentiment analysis")
         sentiment_analysis_time = time.time()
 
-        for i, file_name in enumerate(glob(f'{self.paths["clips_save_path"]}/*.wav')):
+        files = glob(f'{self.paths["clips_save_path"]}/*.wav')
+        files.sort(key=alphanum_key)
+
+        for i, file_name in enumerate(files):
             clip_time = time.time()
             print(f"\nProcessing clip {i+1}:")
 

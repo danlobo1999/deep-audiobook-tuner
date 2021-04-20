@@ -6,9 +6,24 @@ import librosa
 from midi2audio import FluidSynth
 from pydub import AudioSegment
 import soundfile as sf
+import re
 
 
 fs_font_path = "D:/Software/SF2/GeneralUser GS v1.471.sf2"
+
+
+def tryint(s):
+    try:
+        return int(s)
+    except:
+        return s
+
+
+def alphanum_key(s):
+    """ Turn a string into a list of string and number chunks.
+        "z23a" -> ["z", 23, "a"]
+    """
+    return [tryint(c) for c in re.split("([0-9]+)", s)]
 
 
 def convertToWav(file_name, file_path, save_path):
