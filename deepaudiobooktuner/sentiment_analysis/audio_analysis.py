@@ -6,16 +6,16 @@ import pickle
 import time
 
 
-def loadAudioAssets(model_path, pickles_path):
+def load_audio_assets(model_path, pickles_path):
     # Load the model
     model = tf.keras.models.load_model(model_path)
 
     # Load the scaler
-    pickle_in = open(f"{pickles_path}/scaler.pickle", "rb")
+    pickle_in = open(f"{pickles_path}/scaler_19_april.pickle", "rb")
     scaler = pickle.load(pickle_in)
 
     # Laod the audio classes
-    pickle_in = open(f"{pickles_path}/labels.pickle", "rb")
+    pickle_in = open(f"{pickles_path}/labels_19_april.pickle", "rb")
     audio_classes = pickle.load(pickle_in)
 
     return model, scaler, audio_classes

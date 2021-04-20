@@ -1,6 +1,6 @@
 import time
 
-from deepaudiobooktuner.sentiment_analysis.audio_analysis import loadAudioAssets
+from deepaudiobooktuner.sentiment_analysis.audio_analysis import load_audio_assets
 from deepaudiobooktuner.sentiment_analysis.text_analysis import loadTextAssets
 from deepaudiobooktuner.music_generation.music_generation import loadMusicAssets
 from deepaudiobooktuner.sentiment_analysis.ibm_transcription import setUpIBM
@@ -9,7 +9,7 @@ from deepaudiobooktuner.sentiment_analysis.ibm_transcription import setUpIBM
 def loadAssets(paths):
     # Loading the audio analyzer model, scaler and classes
     current_time = time.time()
-    audio_model, audio_scaler, audio_classes = loadAudioAssets(
+    audio_model, audio_scaler, audio_classes = load_audio_assets(
         model_path=paths["audio_model"], pickles_path=paths["pickles"]
     )
     print(

@@ -13,7 +13,7 @@ def createDir(file_path):
 
     paths = {
         "audio_model": path(
-            "../assets/audio_sentiment_data_v2/models/hyperband_tuned_model_final_[0.260879248380661, 0.9069767594337463]/"
+            "../assets/audio_sentiment_data_v2/models/hyperband_tuned_model_19_april_[0.3624165654182434, 0.8720930218696594]/"
         ),
         "pickles": path("../assets/audio_sentiment_data_v2/pickles"),
         "text_model": path("../assets/text_sentiment_data/models/my_bert_model/"),
