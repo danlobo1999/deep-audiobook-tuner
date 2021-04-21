@@ -157,7 +157,7 @@ def createSountrack(music_dict, emotion_list):
     # Normalizing the final soundtrack
     final_track = normalize(final_track)
 
-    final_track = final_track - 15
+    final_track = final_track - 17
 
     return final_track
 
