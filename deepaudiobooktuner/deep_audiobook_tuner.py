@@ -140,7 +140,7 @@ class deepAudiobookTuner:
         )
 
         self.music_dict = saveMusicClips(
-            music_emotions=music_emotions, songs=self.songs, paths=self.paths
+            music_emotions=["Angry", "Happy", "Neutral", "Sad"], songs=self.songs, paths=self.paths
         )
 
         print(
