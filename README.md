@@ -11,8 +11,6 @@ This project was made in collaboration with:
 - [Smita Deulkar](https://github.com/smita3199)
 - [Leander Fernandes](https://github.com/fernandeslder)
 
----
-
 ## **Table of Contents:**
 
 1. <a href="#About">About</a>
@@ -24,9 +22,6 @@ This project was made in collaboration with:
 7. <a href="#Results">Results</a>
 8. <a href="#References">References</a>
 
----
-
-<br>
 
 ## <a name="About">**1. About**</a>
 
@@ -46,9 +41,6 @@ Given below is the workflow of our system:
     <img src = "images/HowTheSytemWorks.PNG">
 </p>
 
----
-
-<br>
 
 ## <a name="Structure">**2. Folder Structure**</a>
 
@@ -98,9 +90,6 @@ deep-audiobook-tuner
 └───tests
 ```
 
----
-
-<br>
 
 ## <a name="Installation">**3. Installation**</a>
 
@@ -119,9 +108,7 @@ Additional requirements:
 - Ffmpeg is available [here.](https://www.ffmpeg.org/download.html)
 - The package midi2audio requires a sound font which can be downloaded [here.](https://member.keymusician.com/Member/FluidR3_GM/index.html) The sound font should be place in **deep-audiobook-tuner/assets/music_generation_data/soundfont/** (Refer the <a href="#Structure">folder structure</a>)
 
----
 
-<br>
 
 ## <a name="Setup">**4. Setup**</a>
 
@@ -131,21 +118,17 @@ To run this project the following API key and models are required.
 
 The transcription process is done using a cloud service, specifically IBM's Watson Speech To Text. In order to use this service an API key is required. Create a free account and obtain your API key and URL. These values are to be saved in a file called .env as shown here `api_key = 'your_api_key' url = 'your_url'` . Keep this file in the root directory.
 
-<br>
 
 #### Music generation model
 
 The music generation model trained by [bearpelican](https://github.com/bearpelican/musicautobot) is available at [here.](https://ashaw-midi-web-server.s3-us-west-2.amazonaws.com/pretrained/MusicTransformerKeyC.pth) This model is to be placed in **deep-audiobook-tuner/assets/music_generation_data/models/** (Refer the <a href="#Structure">folder structure</a>)
 
-<br>
 
 #### Text sentiment analysis model
 
 A pre-trained text sentiment analysis model is available [here.](https://drive.google.com/drive/folders/1rE-08BOk2R7O0oLoYnBusvFuJVVwUr1J?usp=sharing) This model is to be placed in **deep-audiobook-tuner/assets/text_sentiment_data/models/neubias_bert_model/** (Refer the <a href="#Structure">folder structure</a>)
 
----
 
-<br>
 
 ## <a name="Dataset">**5. Datasets used**</a>
 
@@ -159,9 +142,6 @@ A pre-trained text sentiment analysis model is available [here.](https://drive.g
 
   For music generation, although we used a pre-trained model, we required our model to generated music according to the given emotion. For this we created a small hand labelled dataset of video-game piano music according to the emotions being used by our system. This dataset is used as the input for the music generation model. The data set is located here **deep-audiobook-tuner/assets/music_generation_data/datasets/vg-midi-annotated** (Refer the <a href="#Structure">folder structure</a>)
 
----
-
-<br>
 
 ## <a name="Notebooks">**6. Source Code**</a>
 
@@ -170,9 +150,6 @@ A pre-trained text sentiment analysis model is available [here.](https://drive.g
 - [music_generation/](https://github.com/danlobo1999/deep-audiobook-tuner/tree/main/deepaudiobooktuner/music_generation) - submodule for generating emotional music.
 - [deep_audiobook_tuner.py](https://github.com/danlobo1999/deep-audiobook-tuner/blob/main/deepaudiobooktuner/deep_audiobook_tuner.py) -  consists of all the functions need to run the application.
 
----
-
-<br>
 
 ## <a name="Results">**7. Results**</a>
 
@@ -184,9 +161,7 @@ Given below are the accuracy metrics of our sentiment analysis models.
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | <img src = "images/TBSA accuracy_metrics.png" width="450" height="200"> | <img src = "images/ABSA accuracy_metrics.png" width="450" height="200"> |
 
----
 
-<br>
 
 ## <a name="References">**8. References**</a>
 
