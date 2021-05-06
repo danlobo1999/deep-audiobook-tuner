@@ -30,7 +30,7 @@ ktrain==0.26.2
 ipyparallel
 torch
 fastai==1.0.61
-music21
-pebble
+music21==6.7.1
+pebble==4.6.1
 musicautobot==0.0.1
-midi2audio
+midi2audio==0.1.1
