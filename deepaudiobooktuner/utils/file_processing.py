@@ -9,9 +9,7 @@ import soundfile as sf
 import re
 
 
-#fs_font_path = "D:/Software/SF2/GeneralUser GS v1.471.sf2"
-fs_font_path = "C:/fluidsynth/FluidR3_GM.sf2"
-
+fs_font_path = "../../assets/music_generation_data/soundfont/GeneralUser GS v1.471.sf2"
 
 
 def tryint(s):
