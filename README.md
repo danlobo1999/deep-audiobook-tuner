@@ -45,6 +45,7 @@ Given below is the workflow of our system:
 <p align="center">
     <img src = "images/HowTheSytemWorks.PNG">
 </p>
+
 ---
 
 <br>
@@ -189,7 +190,7 @@ Given below are the accuracy metrics of our sentiment analysis models.
 
 ## <a name="References">**8. References**</a>
 
-- [Google's BERT model](https://github.com/google-research/bert)
-- [Ktrain wrapper for Keras](https://github.com/amaiya/ktrain/tree/23baf7cd75bdf44cb096438e7dd4c7b74734e472)
-- [Speech-Emotion-Analyzer](https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer)
-- [Musicautobot](https://github.com/bearpelican/musicautobot)
+[1] [Google's BERT model](https://github.com/google-research/bert)
+[2] [Ktrain wrapper for Keras](https://github.com/amaiya/ktrain/tree/23baf7cd75bdf44cb096438e7dd4c7b74734e472)
+[3] [Speech-Emotion-Analyzer](https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer)
+[4] [Musicautobot](https://github.com/bearpelican/musicautobot)
