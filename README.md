@@ -132,11 +132,13 @@ A pre-trained text sentiment analysis model is available [here.](https://drive.g
 
 ## <a name="Dataset">**5. Datasets used**</a>
 
+- Text Sentiment Analysis
+
+  The [DailyDialog](http://yanran.li/dailydialog), [Emotion-Stimulus](https://www.site.uottawa.ca/~diana/resources/emotion_stimulus_data/) and [ISEAR](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) datasets were combined to create a balanced dataset with 4 labels: angry, happy, neutral and sad. We trained, validated and tested our model on these datasets and the accuracy obtained is discussed in the <a href="#Results">results section.</a>
+
 - Audio Sentiment Analysis
 
   A combination of 3 datasets were used. The [TESS dataset](https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess), the [RAVDESS dataset](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio) and the [SAVEE dataset.](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio) We trained, validated and tested our model on these datasets for the following emotions: Anger, Happiness, Neutral and Sadness. The accuracy obtained is discussed in the <a href="#Results">results section.</a>
-
-- Text Sentiment Analysis
 
 - Music Generation
 
