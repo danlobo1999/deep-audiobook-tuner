@@ -13,14 +13,14 @@ from deepaudiobooktuner.utils.paths import path
 
 
 paths = {
-    "music_samples": path("../assets/music_generation/datasets/vg-midi-annotated"),
-    "music_data": path("../assets/music_generation/pickles/"),
+    "music_samples": path("../assets/music_generation_data/datasets/vg-midi-annotated"),
+    "music_data": path("../assets/music_generation_data/pickles/"),
     "music_clips_save_path": path("music_clips"),
-    "music_model": path("../assets/music_generation/models/MusicTransformerKeyC.pth"),
+    "music_model": path("../assets/music_generation_data/models/MusicTransformer.pth"),
 }
 # os.mkdir(paths["music_clips_save_path"])
 
-music_data, music_model = loadMusicAssets(paths)
+music_data, music_model = loadMusicAssets(paths["music_data"], paths["music_model"])
 
 
 def generateMusic(music_emotions=["Angry", "Happy", "Neutral", "Sad"]):
@@ -31,7 +31,7 @@ def generateMusic(music_emotions=["Angry", "Happy", "Neutral", "Sad"]):
 
     songs = generateMusicClips(
         music_emotions=music_emotions,
-        paths=paths,
+        music_samples_path=paths["music_samples"],
         music_model=music_model,
         music_data=music_data,
         songs=songs,

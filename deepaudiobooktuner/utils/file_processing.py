@@ -7,9 +7,12 @@ from midi2audio import FluidSynth
 from pydub import AudioSegment
 import soundfile as sf
 import re
+from deepaudiobooktuner.utils.paths import path
 
 
-fs_font_path = "../../assets/music_generation_data/soundfont/GeneralUser GS v1.471.sf2"
+fs_font_path = path(
+    "..\\assets\\music_generation_data\\soundfont\\GeneralUser GS v1.471.sf2"
+)
 
 
 def tryint(s):

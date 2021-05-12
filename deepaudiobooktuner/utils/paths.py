@@ -18,10 +18,12 @@ def createDir(file_path):
         "pickles": path("../assets/audio_sentiment_data_v2/pickles"),
         "text_model": path("../assets/text_sentiment_data/models/neubias_bert_model/"),
         "music_model": path(
-            "../assets/music_generation/models/MusicTransformer.pth"
+            "../assets/music_generation_data/models/MusicTransformer.pth"
         ),
-        "music_data": path("../assets/music_generation/pickles/"),
-        "music_samples": path("../assets/music_generation/datasets/vg-midi-annotated-cleaned"),
+        "music_data": path("../assets/music_generation_data/pickles/"),
+        "music_samples": path(
+            "../assets/music_generation_data/datasets/vg-midi-annotated-cleaned"
+        ),
         "wav_save_path": path(f"../assets/temp/{file_name}-{creation_time}"),
         "clips_save_path": path(f"../assets/temp/{file_name}-{creation_time}/clips"),
         "music_clips_save_path": path(
