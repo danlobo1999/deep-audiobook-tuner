@@ -133,7 +133,7 @@ A pre-trained text sentiment analysis model is available [here.](https://drive.g
 
 - Music Generation
 
-  For music generation, although we used a pre-trained model, we required our model to generated music according to the given emotion. For this we created a small hand labelled dataset of video-game piano music according to the emotions being used by our system. This dataset is used as the input for the music generation model. The data set is located here **deep-audiobook-tuner/assets/music_generation_data/datasets/vg-midi-annotated** (Refer the <a href="#Structure">folder structure</a>)
+  For music generation, although we used a pre-trained model, we required our model to generate music according to the given emotion. For this we created a small hand labelled dataset of video-game piano music according to the emotions being used by our system. This dataset is used as the input for the music generation model. The data set is located here **deep-audiobook-tuner/assets/music_generation_data/datasets/vg-midi-annotated** (Refer the <a href="#Structure">folder structure</a>)
 
 ## <a name="Notebooks">**6. Source Code**</a>
 
