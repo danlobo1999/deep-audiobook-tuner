@@ -125,15 +125,15 @@ A pre-trained text sentiment analysis model is available [here.](https://drive.g
 
 - Text Sentiment Analysis
 
-  The [DailyDialog](http://yanran.li/dailydialog), [Emotion-Stimulus](https://www.site.uottawa.ca/~diana/resources/emotion_stimulus_data/) and [ISEAR](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) datasets were combined to create a balanced dataset with 4 labels: angry, happy, neutral and sad. We trained, validated and tested our model on these datasets and the accuracy obtained is discussed in the <a href="#Results">results section.</a>
+  The [DailyDialog](http://yanran.li/dailydialog), the [ISEAR](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/) and the [Emotion-Stimulus](https://www.site.uottawa.ca/~diana/resources/emotion_stimulus_data/) datasets were mixed together to create a dataset with 4 labels: Anger, Happiness, Neutrality and Sadness. We trained, validated and tested our model on these datasets and the accuracy obtained is discussed in the <a href="#Results">results section.</a>
 
 - Audio Sentiment Analysis
 
-  A combination of 3 datasets were used. The [TESS dataset](https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess), the [RAVDESS dataset](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio) and the [SAVEE dataset.](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio) We trained, validated and tested our model on these datasets for the following emotions: Anger, Happiness, Neutral and Sadness. The accuracy obtained is discussed in the <a href="#Results">results section.</a>
+  A combination of 3 datasets were used. The [TESS dataset](https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess), the [RAVDESS dataset](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio) and the [SAVEE dataset.](https://www.kaggle.com/uwrfkaggler/ravdess-emotional-speech-audio) We trained our model on these datasets for the following emotions: Anger, Happiness, Neutral and Sadness. The model was then tested and validated. The accuracy obtained is discussed in the <a href="#Results">results section.</a>
 
 - Music Generation
 
-  For music generation, although we used a pre-trained model, we required our model to generate music according to the given emotion. For this we created a small hand labelled dataset of video-game piano music according to the emotions being used by our system. This dataset is used as the input for the music generation model. The data set is located here **deep-audiobook-tuner/assets/music_generation_data/datasets/vg-midi-annotated** (Refer the <a href="#Structure">folder structure</a>)
+  We used a pre-trained model for music generation, but we required our model to generate music based on the emotion. For this, we built a tiny dataset of video-game piano music that was hand-labeled according to the emotions that our system was using. The music generating model uses this dataset as its input. The data set is located here **deep-audiobook-tuner/assets/music_generation_data/datasets/vg-midi-annotated** (Refer the <a href="#Structure">folder structure</a>)
 
 ## <a name="Notebooks">**6. Source Code**</a>
 
