@@ -1,6 +1,6 @@
 # **Deep Audiobook Tuner (DAT)**
 
-A system that generates an apt, emotionally pertinent, unique background music for an audiobook automatically based on the current narrative for the purpose of ameliorating user-experience while being accurate, cost-efficient, and time saving.
+A system that generates an apt, emotionally pertinent, unique sequences of music for audiobooks based on the current narrative for the purpose of ameliorating user-experience while being accurate, cost-efficient, and time saving.
 
 This repository is about the innerworkings of DAT. Check out the Flask application made for this project at https://github.com/jendcruz22/DeepAudiobookTunerApp
 
